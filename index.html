@@ -3,5 +3,76 @@
     <head>
         <title>AidoP's Portfolio</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="generic.css">
+        <style>
+            .section h1 {
+                padding-bottom: 0.5em;
+                border-bottom: 1px solid #aaa;
+            }
+
+            .project {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1em;
+                box-shadow: 0 0 3px #aaa;
+                border-radius: 0.75em;
+            }
+            .project:hover .p_title h2 {
+                padding-left: 2em;
+                transition: padding-left 0.1s ease-in-out;
+            }
+            .p_title {
+                flex-grow: 0;
+                /*flex-basis: 15em;*/
+                min-width: 12em;
+            }
+            .p_title h2 {
+                margin: 0;
+                padding: 1em;
+                transition: padding-left 0.1s ease-in-out;
+            }
+            .p_contents {
+                flex-grow: 1;
+                margin-left: 2em;
+            }
+        </style>
     </head>
+    <body>
+        <header>
+            <h1>AidoP's Portfolio</h1>
+            <a href="https://gitlab.com/AidoP1"style="overflow: hidden; margin-top: -9px"><img src="gitlab-icon.svg" alt="My GitLab Profile" width="80em"></a>
+            <a href="https://github.com/AidoP"><img src="github-icon.svg" alt="My GitHub Profile" width="56em"></a>
+        </header>
+        <main>
+            <div class="section">
+                <h1>Public Projects</h1>
+                <div id="projects">
+                    <a href="https://gitlab.com/AidoP1/wayvk" class="project">
+                        <span class="p_title">
+                            <h2>Wayvk</h2>
+                        </span>
+                        <span class="p_contents">
+                            <p>A Wayland compositor using Vulkan with the <code>VK_KHR_display</code> extension for direct screen output. Wayvk also provides a framebuffer console replacement.</p>
+                        </span>
+                    </a>
+                    <a href="https://gitlab.com/AidoP1/rysk-core" class="project">
+                        <span class="p_title">
+                            <h2>Rysk Core</h2>
+                        </span>
+                        <span class="p_contents">
+                            <p>A library providing RISC-V instruction decoding and execution with the flexibility to support both RV32 and RV64 as well as the users choice of extensions.</p>
+                        </span>
+                    </a>
+                    <a href="https://gitlab.com/AidoP1/rysk" class="project">
+                        <span class="p_title">
+                            <h2>Rysk</h2>
+                        </span>
+                        <span class="p_contents">
+                            <p>A RISC-V emulator designed for education. Development awaits Rysk Core feature completeness.</p>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
