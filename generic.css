@@ -4,11 +4,33 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-body {
-    margin: 0 10vw;
-    padding: 5vh 5vw;
-    min-height: 90vh;
-    box-shadow: 0 0 500px #acacac;
+@media (max-width: 50em) {
+    body {
+        margin: 5vh 10vw;
+        text-size-adjust: 75%;
+        -moz-text-size-adjust: 75%;
+        -webkit-text-size-adjust: 75%;
+    }
+    header a img {
+        scale: 60%;
+    }
+    header a:hover img {
+        scale: 70%;
+    }
+}
+@media (min-width: 50em) {
+    body {
+        margin: 0 10vw;
+        padding: 5vh 5vw;
+        min-height: 90vh;
+        box-shadow: 0 0 500px #acacac;
+    }
+    header a img {
+        scale: 80%;
+    }
+    header a:hover img {
+        scale: 100%;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,10 +66,8 @@ header > a {
     float: right;
 }
 header a img {
-    scale: 80%;
     transition: scale 0.1s ease-in-out;
 }
 header a:hover img {
-    scale: 100%;
     transition: scale 0.1s ease-in-out;
 }
