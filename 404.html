@@ -7,12 +7,19 @@
         <link rel="stylesheet" type="text/css" href="generic.css">
         <style>
             @keyframes tumble {
-                from { rotate: 0; }
-                to { rotate: 360deg; }
+                from {
+                    rotate: 0deg;
+                    left: calc(-50% - 128px);
+                }
+                to {
+                    rotate: 1080deg;
+                    left: calc(50% + 128px);
+                }
             }
 
             .rotate {
-                animation: tumble 1.2s linear infinite;
+                position: relative;
+                animation: tumble 2.6s linear infinite;
             }
         </style>
     </head>
@@ -23,8 +30,8 @@
             <a href="https://github.com/AidoP"><img src="github-icon.svg" alt="My GitHub Profile" width="56em"></a>
         </header>
         <main>
-            <div style="text-align: center;">
-                <img class="rotate" src="tumbleweed.png" width="128px">
+            <div style="text-align: center; overflow: hidden;">
+                <img class="rotate" src="tumbleweed.png" alt="tumbleweed" width="128px">
                 <h1>There is nothing out here</h1>
                 <p>You should head back whence you came...</p>
             </div>
