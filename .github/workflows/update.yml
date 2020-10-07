@@ -14,7 +14,7 @@ jobs:
       - name: Push Changes
         uses: EndBug/add-and-commit@v5
         with:
-          add: '.gitmodules'
+          add: 'blog'
           author_name: 'Blog Updater'
           message: 'Updating blog submodule'
         env:
