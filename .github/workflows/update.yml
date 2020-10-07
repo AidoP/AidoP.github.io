@@ -1,6 +1,6 @@
 name: Update Submodules
 on:
-  workflow_dispatch
+  workflow_dispatch:
   repository_dispatch:
     types: [blog]
 
