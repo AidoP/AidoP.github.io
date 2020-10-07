@@ -1,0 +1,12 @@
+name: Update Submodules
+on:
+  repository_dispatch:
+    types: [blog]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update Submodule
+        run: git submodule update --remote 
