@@ -3,8 +3,6 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [blog]
-  schedule:
-    - cron: '0/30 * * * *'
 
 jobs:
   build:
@@ -16,6 +14,8 @@ jobs:
       - name: Push Changes
         uses: EndBug/add-and-commit@v5
         with:
-            add: 'blog .gitmodules'
-            author_name: 'Blog Updater'
-            message: 'Updating blog submodule'
+          add: 'blog .gitmodules'
+          author_name: 'Blog Updater'
+          message: 'Updating blog submodule'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
