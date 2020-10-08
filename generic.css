@@ -71,3 +71,9 @@ header a img {
 header a:hover img {
     transition: scale 0.1s ease-in-out;
 }
+
+footer {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #aaa;
+}
