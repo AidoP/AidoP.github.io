@@ -20,3 +20,4 @@ jobs:
           git add blog
           git commit -m "Auto-updated blog submodule"
           git push
+        continue-on-error: true
