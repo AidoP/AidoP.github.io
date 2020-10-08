@@ -12,10 +12,9 @@ jobs:
       - name: Update Submodule
         run: git submodule update --remote
       - name: Push Changes
-        uses: EndBug/add-and-commit@v5
-        with:
-          add: 'blog'
-          author_name: 'Blog Updater'
-          message: 'Updating blog submodule'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "Blog Updater"
+          git config user.email "aidop@me.com"
+          git add blog
+          git commit -m "Auto-updated blog submodule"
+          git push
