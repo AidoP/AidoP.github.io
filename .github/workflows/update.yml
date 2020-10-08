@@ -13,7 +13,7 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Update Submodule
-        run: git submodule update --remote origin/pages
+        run: git submodule update --remote
       - name: Push Changes
         run: |
           git config user.name "Blog Updater"
