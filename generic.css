@@ -1,21 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
+:root {
+    --text: rgb(205, 205, 205);
+    --accent: rgb(40, 240, 40);
+    --link: rgb(105, 105, 255);
+    --link-hover: rgb(75, 75, 225);
+    --border: rgb(60, 60, 60);
+    --inset: rgb(40, 40, 41);
+    --background: rgb(30, 30, 31);
+    --github-mark: url("github_dark.png");
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: rgb(0, 0, 0);
+        --accent: rgb(40, 240, 40);
+        --link: rgb(20, 20, 200);
+        --link-hover: rgb(80, 80, 240);
+        --border: rgb(30, 30, 30);
+        --inset: rgb(205, 205, 205);
+        --background: rgb(245, 245, 245);
+        --github-mark: url("github_light.png");
+    }
+}
+
 html {
+    --warning: none;
     font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text);
+    background-color: var(--background);
 }
 
 @media (max-width: 50em) {
     body {
-        margin: 5vh 10vw;
+        margin: 1em;
         text-size-adjust: 75%;
         -moz-text-size-adjust: 75%;
         -webkit-text-size-adjust: 75%;
-    }
-    header a img {
-        scale: 60%;
-    }
-    header a:hover img {
-        scale: 70%;
     }
 }
 @media (min-width: 50em) {
@@ -23,14 +44,12 @@ html {
         margin: 0 10vw;
         padding: 5vh 5vw;
         min-height: 90vh;
-        box-shadow: 0 0 500px #acacac;
+        box-shadow: 0 0 500px var(--border);
     }
-    header a img {
-        scale: 80%;
-    }
-    header a:hover img {
-        scale: 100%;
-    }
+}
+
+#standards_warning {
+    display: var(--warning);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,26 +57,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: #2F2F2F;
+    color: var(--link);
     text-decoration: none;
     transition: color 0.1s ease-in-out;
 }
 a:hover {
-    color: #8F8F8F;
+    color: var(--link-hover);
     transition: color 0.1s ease-in-out;
 }
 
-code {
+pre {
     font-family: 'Source Code Pro', monospace;
     padding: 0 0.2em;
     border-radius: 3px;
-    background-color: #EFEFEF;
+    background-color: var(--inset);
+}
+
+code {
+    color: var(--text);
 }
 
 header {
     margin-bottom: 5em;
     padding-bottom: 1.5em;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid var(--border);
 }
 header h1 {
     display: inline;
@@ -65,15 +88,66 @@ header h1 {
 header > a {
     float: right;
 }
-header a img {
-    transition: scale 0.1s ease-in-out;
+header a div {
+    transition: opacity, scale 0.1s ease-in-out;
+    opacity: 100%;
+    scale: 80%;
 }
-header a:hover img {
-    transition: scale 0.1s ease-in-out;
+header a:hover div {
+    transition: opacity, scale 0.1s ease-in-out;
+    opacity: 75%;
+    scale: 100%;
 }
 
 footer {
     margin-top: 2em;
     padding-top: 1.5em;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid var(--border);
+}
+
+.section h1 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--border);
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    box-shadow: 0 0 3px var(--border);
+    border-radius: 0.75em;
+}
+.project:hover .p_title h2 {
+    padding-left: 2em;
+    transition: padding-left 0.1s ease-in-out;
+}
+.p_title {
+    flex-grow: 0;
+    min-width: 12em;
+}
+.p_title h2 {
+    margin: 0;
+    padding: 1em;
+    transition: padding-left 0.1s ease-in-out;
+}
+.p_contents {
+    color: var(--text);
+    flex-grow: 1;
+    margin-left: 2em;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 1em;
+}
+#github_icon {
+    background: var(--github-mark);
+    background-size: cover;
+    display: inline-block;
+}
+#gitlab_icon {
+    background: url("gitlab.png");
+    background-size: cover;
+    display: inline-block;
 }

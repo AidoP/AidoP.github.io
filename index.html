@@ -5,46 +5,39 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="generic.css">
-        <style>
-            .section h1 {
-                padding-bottom: 0.5em;
-                border-bottom: 1px solid #aaa;
-            }
-
-            .project {
-                display: flex;
-                align-items: center;
-                margin-bottom: 1em;
-                box-shadow: 0 0 3px #aaa;
-                border-radius: 0.75em;
-            }
-            .project:hover .p_title h2 {
-                padding-left: 2em;
-                transition: padding-left 0.1s ease-in-out;
-            }
-            .p_title {
-                flex-grow: 0;
-                min-width: 12em;
-            }
-            .p_title h2 {
-                margin: 0;
-                padding: 1em;
-                transition: padding-left 0.1s ease-in-out;
-            }
-            .p_contents {
-                flex-grow: 1;
-                margin-left: 2em;
-            }
-        </style>
     </head>
     <body>
+        <div id="standards_warning">
+            <h1>Old Browser</h1>
+            <p>
+                This site uses modern web standards to look good.
+                Your browser requires updating to show this page correctly.
+            </p>
+        </div>
         <header>
             <h1>AidoP's Portfolio</h1>
             <a href="/blog" style="margin-top: 0.5em;"><h1>Blog</h1></a>
-            <a href="https://gitlab.com/AidoP1" style="overflow: hidden; margin-top: -9px"><img src="gitlab-icon.svg" alt="My GitLab Profile" width="80em"></a>
-            <a href="https://github.com/AidoP"><img src="github-icon.svg" alt="My GitHub Profile" width="56em"></a>
+            <a href="https://gitlab.com/AidoP1"><div id="gitlab_icon" class="icon"></div></a>
+            <a href="https://github.com/AidoP"><div id="github_icon" class="icon"></div></a>
         </header>
         <main>
+            <pre class="section" style="display: none">
+                <code id="code_rust">
+fn main() {
+    println!("Hello, World!");
+}
+                </code>
+                <code id="code_sh">
+echo 'Hello, World!'
+                </code>
+                <code id="code_c">
+#include &lt;"stdio.h"&gt;
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+                </code>
+            </pre>
             <div class="section">
                 <h1>Public Projects</h1>
                 <div id="projects">
